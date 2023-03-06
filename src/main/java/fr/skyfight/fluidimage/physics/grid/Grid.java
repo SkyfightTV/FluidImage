@@ -1,9 +1,9 @@
-package fr.skyfight.fluidcollision.physics.grid;
+package fr.skyfight.fluidimage.physics.grid;
 
-import fr.skyfight.fluidcollision.Settings;
-import fr.skyfight.fluidcollision.objects.Water;
-import fr.skyfight.fluidcollision.utils.Location;
-import fr.skyfight.fluidcollision.utils.Vector2D;
+import fr.skyfight.fluidimage.Settings;
+import fr.skyfight.fluidimage.objects.Water;
+import fr.skyfight.fluidimage.utils.Location;
+import fr.skyfight.fluidimage.utils.Vector2D;
 
 import java.util.List;
 

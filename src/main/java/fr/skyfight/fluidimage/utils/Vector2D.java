@@ -1,4 +1,4 @@
-package fr.skyfight.fluidcollision.utils;
+package fr.skyfight.fluidimage.utils;
 
 public class Vector2D {
 

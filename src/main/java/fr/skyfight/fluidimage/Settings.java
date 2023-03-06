@@ -1,6 +1,6 @@
-package fr.skyfight.fluidcollision;
+package fr.skyfight.fluidimage;
 
-import fr.skyfight.fluidcollision.utils.Vector2D;
+import fr.skyfight.fluidimage.utils.Vector2D;
 import processing.core.PImage;
 
 import java.io.File;
@@ -18,6 +18,7 @@ public class Settings {
 
     public static String path;
     public static boolean save = true;
+    public static boolean finish = false;
     public static File saveFile;
     public static int waterCount = 0;
     public static File image;

@@ -1,8 +1,7 @@
-package fr.skyfight.fluidcollision.utils;
+package fr.skyfight.fluidimage.utils;
 
-import fr.skyfight.fluidcollision.Application;
-import fr.skyfight.fluidcollision.Settings;
-import fr.skyfight.fluidcollision.objects.Water;
+import fr.skyfight.fluidimage.Settings;
+import fr.skyfight.fluidimage.objects.Water;
 
 import java.io.IOException;
 import java.nio.file.Files;

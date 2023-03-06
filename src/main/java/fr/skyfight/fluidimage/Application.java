@@ -1,17 +1,16 @@
-package fr.skyfight.fluidcollision;
+package fr.skyfight.fluidimage;
 
-import fr.skyfight.fluidcollision.objects.Water;
-import fr.skyfight.fluidcollision.physics.Physics;
-import fr.skyfight.fluidcollision.physics.grid.Grid;
-import fr.skyfight.fluidcollision.utils.Location;
-import fr.skyfight.fluidcollision.utils.Saver;
-import fr.skyfight.fluidcollision.utils.Vector2D;
+import fr.skyfight.fluidimage.objects.Water;
+import fr.skyfight.fluidimage.physics.Physics;
+import fr.skyfight.fluidimage.physics.grid.Grid;
+import fr.skyfight.fluidimage.utils.Location;
+import fr.skyfight.fluidimage.utils.Saver;
+import fr.skyfight.fluidimage.utils.Vector2D;
 import processing.core.PApplet;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -70,23 +69,44 @@ public class Application extends PApplet {
         }
         Physics.process(this, waterList.subList(0, Settings.waterCount));
         updatePixels();
-        if (keyPressed && Settings.save) {
-            System.out.println("Saving waters data...");
-            Settings.save = false;
-            new Thread(() -> {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                noLoop();
-                Saver.save(waterList.subList(0, Settings.waterCount));
-                exit();
-            }).start();
+        if (Settings.waterCount == waterList.size() && !Settings.finish) {
+            Settings.finish = true;
+            if (Settings.save) {
+                System.out.println("Saving waters data...");
+                Settings.save = false;
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    noLoop();
+                    Saver.save(waterList.subList(0, Settings.waterCount));
+                    try {
+                        Main.restartApplication();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }).start();
+            } else {
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    noLoop();
+                }).start();
+            }
         }
 
         float time = (System.nanoTime() - start) / 1000000f;
         text("Simulation time: " + Settings.DF.format(time) + "ms", 10, 20);
         text("Objects: " + Settings.waterCount, 10, 30);
+        String topmsg = "Create model in progress...";
+        if (!Settings.save) {
+            topmsg = "Reproduice model in progress...";
+        }
+        text(topmsg, 10, 40, Settings.WIDTH - 20, Settings.HEIGHT - 20);
     }
 }

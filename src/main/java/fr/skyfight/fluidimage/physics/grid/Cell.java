@@ -1,6 +1,6 @@
-package fr.skyfight.fluidcollision.physics.grid;
+package fr.skyfight.fluidimage.physics.grid;
 
-import fr.skyfight.fluidcollision.objects.Water;
+import fr.skyfight.fluidimage.objects.Water;
 
 import java.util.ArrayList;
 import java.util.List;

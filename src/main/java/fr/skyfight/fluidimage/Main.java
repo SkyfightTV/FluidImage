@@ -1,16 +1,17 @@
-package fr.skyfight.fluidcollision;
+package fr.skyfight.fluidimage;
 
 import processing.core.PApplet;
 
-import javax.swing.*;
 import java.io.File;
-import java.io.FileFilter;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.net.URISyntaxException;
 
 public class Main extends PApplet {
+    private static String[] args;
+
     public static void main(String[] args) {
+        Main.args = args;
         try {
             Settings.path = Main.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
             //remove the jar name
@@ -31,6 +32,9 @@ public class Main extends PApplet {
         }
         cmd.append("-cp ").append(ManagementFactory.getRuntimeMXBean().getClassPath()).append(" ");
         cmd.append(Main.class.getName()).append(" ");
+        for (String arg : args) {
+            cmd.append(arg).append(" ");
+        }
         Runtime.getRuntime().exec(cmd.toString());
         System.exit(0);
     }

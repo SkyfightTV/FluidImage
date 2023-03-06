@@ -1,12 +1,9 @@
-package fr.skyfight.fluidcollision.objects;
+package fr.skyfight.fluidimage.objects;
 
-import fr.skyfight.fluidcollision.Settings;
-import fr.skyfight.fluidcollision.utils.Location;
-import fr.skyfight.fluidcollision.Main;
-import fr.skyfight.fluidcollision.utils.Vector2D;
+import fr.skyfight.fluidimage.Settings;
+import fr.skyfight.fluidimage.utils.Location;
+import fr.skyfight.fluidimage.utils.Vector2D;
 import processing.core.PApplet;
-
-import java.util.Random;
 
 public class Water {
     private Location location;

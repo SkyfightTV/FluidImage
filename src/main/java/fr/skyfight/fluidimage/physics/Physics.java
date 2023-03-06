@@ -1,9 +1,9 @@
-package fr.skyfight.fluidcollision.physics;
+package fr.skyfight.fluidimage.physics;
 
-import fr.skyfight.fluidcollision.Application;
-import fr.skyfight.fluidcollision.Settings;
-import fr.skyfight.fluidcollision.objects.Water;
-import fr.skyfight.fluidcollision.utils.Location;
+import fr.skyfight.fluidimage.Application;
+import fr.skyfight.fluidimage.Settings;
+import fr.skyfight.fluidimage.objects.Water;
+import fr.skyfight.fluidimage.utils.Location;
 import processing.core.PApplet;
 
 import java.util.List;

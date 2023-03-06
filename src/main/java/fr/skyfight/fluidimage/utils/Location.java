@@ -1,4 +1,4 @@
-package fr.skyfight.fluidcollision.utils;
+package fr.skyfight.fluidimage.utils;
 
 public class Location extends Vector2D {
     public Location(float x, float y) {
