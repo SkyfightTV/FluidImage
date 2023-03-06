@@ -26,8 +26,24 @@ public class Application extends PApplet {
     public void setup() {
         background(0);
         grid = new Grid();
-        for (int i = 0; i < Settings.OBJECTS; i++)
-            waterList.add(new Water(new Location(100, 100), Settings.OBJECT_DIAMETER, new Vector2D(20, 0)));
+
+        float angle = 0;
+        boolean first = true;
+        for (int i = 0; i < Settings.OBJECTS; i++) {
+            Vector2D vec = new Vector2D(0, 0);
+            int temp_x = (int) (Settings.OBJECT_DIAMETER * Math.cos(angle)) * 2;
+            int temp_y = (int) (Settings.OBJECT_DIAMETER * Math.sin(angle)) * 2;
+            if (first)
+                angle += 0.1;
+            else
+                angle -= 0.1;
+            if (angle > Math.PI)
+                first = false;
+            else if (angle < 0)
+                first = true;
+            vec.set(temp_x, temp_y);
+            waterList.add(new Water(new Location((int)(Settings.WIDTH / 2), 100), Settings.OBJECT_DIAMETER, vec));
+        }
 
         Settings.saveFile = new File(Settings.path + "\\data.txt");
         if (Settings.image == null)
