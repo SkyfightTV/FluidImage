@@ -21,7 +21,7 @@ public class Main extends PApplet {
         }
         if (args.length == 1)
             Settings.image = new File(args[0]);
-        PApplet.main("fr.skyfight.fluidcollision.Application");
+        PApplet.main("fr.skyfight.fluidimage.Application");
     }
 
     public static void restartApplication() throws IOException {
