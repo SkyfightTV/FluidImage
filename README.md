@@ -17,7 +17,7 @@ Go to the project directory
   cd FluidImage
 ```
 
-Create binary file
+Create jar file
 
 ```bash
   mvn package 
@@ -26,7 +26,7 @@ Create binary file
 Launch the program
 
 ```bash
-  java -jar ./FluidImage [image_path]
+  java -jar ./FluidImage.jar [image_path]
 ```
 
 ## Requirements
