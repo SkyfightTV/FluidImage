@@ -31,7 +31,7 @@ Launch the program
 
 ## Requirements
 
-Java 18 : https://download.oracle.com/java/18/latest/jdk-18_windows-x64_bin.msi
+Java 18 : https://www.oracle.com/java/technologies/javase/jdk18-archive-downloads.html
 
 Maven (To package the project): https://mkyong.com/maven/how-to-install-maven-in-windows/
 
