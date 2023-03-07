@@ -29,6 +29,11 @@ Launch the program
   java -jar ./FluidImage [image_path]
 ```
 
+## Requirements
+
+Java 18 : https://download.oracle.com/java/18/latest/jdk-18_windows-x64_bin.msi
+
+Maven (To package the project): https://mkyong.com/maven/how-to-install-maven-in-windows/
 
 ## Authors
 
